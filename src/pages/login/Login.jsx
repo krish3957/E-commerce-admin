@@ -76,7 +76,7 @@ const Login = () => {
     const handleClick = (e) => {
         e.preventDefault();
         console.log(username,password);
-        login(dispatch, { username, password });
+        login(dispatch, { email:username, password:password });
     }
 
     return (
@@ -86,7 +86,7 @@ const Login = () => {
                 <Wrapper>
                     <Title>SIGN IN</Title>
                     <Form>
-                        <Input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
+                        <Input placeholder="Email" onChange={(e) => setUsername(e.target.value)} />
                         <Input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
                         <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
                         {error && <Error >Something Went Wrong!!!</Error>}
